@@ -7,7 +7,7 @@ Written specifically for my setup, but can be easily changed to suit your needs 
 
 ## ipc_auth.py
 
-A simple script to automate the reauthentication of the Tuya account on a running ```tuya-ipc-terminal``` instance, when streams occasionally drop, and restarting the service is ineffective.
+A simple script to automate the reauthentication of a Tuya account on a running ```tuya-ipc-terminal``` instance, Reauthenticates and restarts the local RTSP streams when they drop out due to expired auth token.
 
   
 
@@ -17,8 +17,9 @@ A simple script to automate the reauthentication of the Tuya account on a runnin
 
 * Python3
 
-* A functional instance of tuya-ipc-terminal, installed as a systemd service (https://github.com/seydx/tuya-ipc-terminal)
-  * Running at port 8555 for my purpose, can be changed to suit your setup
+* A functional instance of tuya-ipc-terminal, installed as a systemd service 
+  * Setup here: (https://github.com/seydx/tuya-ipc-terminal)
+  * Running at port 8555 for my purpose, but can be changed to suit your setup
 
 * pexpect (can be installed using "pip3 install pexpect")
 
@@ -39,6 +40,6 @@ A simple script to automate the reauthentication of the Tuya account on a runnin
  
   * Set the datacenter location according to your account
 ### Usage
-* Run ```./ipc_fix.py```  (you might need to ```chmod +x ./ipc_fix.py``` depending on your system
+* Run ```./ipc_fix.py```  (you might need to ```chmod +x ./ipc_fix.py``` depending on your system)
 * That's it.
     * n8n simply uses its ssh node in an automation to call upon these the same as a user would at the terminal, so nothing too fancy there.
